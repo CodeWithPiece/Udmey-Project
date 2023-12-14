@@ -20,14 +20,14 @@
             android:fontFamily="@font/mermaid"
             android:text="E"
             android:textColor="@color/md_theme_light_primary"
-            android:textSize="40sp" />
+            android:textSize="45sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/mermaid"
             android:text=" Learning"
-            android:textSize="40sp" />
+            android:textSize="45sp" />
 
     </LinearLayout>
 

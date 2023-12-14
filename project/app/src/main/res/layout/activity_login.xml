@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".views.activity.LoginActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/altone"
+        android:text="Hello!"
+        android:textColor="@color/md_theme_light_primary"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/classica"
+        android:text="Enter your email and password\nto continue"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edt_bg"
+        android:fontFamily="@font/classica"
+        android:hint="Enter your email"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:textSize="14sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edt_bg"
+        android:fontFamily="@font/classica"
+        android:hint="Enter your password"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:clickable="true"
+        android:fontFamily="@font/classica"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:text="Forgot Password?"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@color/md_theme_light_primary"
+        android:fontFamily="@font/altone"
+        android:padding="16dp"
+        android:text="Log In"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/classica"
+            android:text="New here? "
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:fontFamily="@font/classica"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="5dp"
+            android:text="Create an account "
+            android:textColor="@color/md_theme_light_primary" />
+
+    </LinearLayout>
+
+</LinearLayout>
