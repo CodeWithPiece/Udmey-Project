@@ -1,8 +1,10 @@
-package com.elearning;
+package com.elearning.views.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.elearning.R;
 
 public class MainActivity extends AppCompatActivity {
 
