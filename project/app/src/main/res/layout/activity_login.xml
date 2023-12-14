@@ -15,7 +15,7 @@
         android:fontFamily="@font/altone"
         android:text="Hello!"
         android:textColor="@color/md_theme_light_primary"
-        android:textSize="45sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <TextView
@@ -24,8 +24,7 @@
         android:fontFamily="@font/classica"
         android:text="Enter your email and password\nto continue"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:textColor="@color/black" />
 
     <EditText
         android:layout_width="match_parent"
@@ -54,6 +53,7 @@
         android:textSize="14sp" />
 
     <TextView
+        android:id="@+id/txtForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
@@ -66,6 +66,7 @@
         android:textColor="@color/black" />
 
     <TextView
+        android:id="@+id/txtLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -97,6 +98,7 @@
             android:textColor="@color/black" />
 
         <TextView
+            android:id="@+id/txtCreateAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
