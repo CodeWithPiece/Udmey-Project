@@ -21,7 +21,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="85dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,14 +77,72 @@
             </LinearLayout>
 
             <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/noimg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/mermaid"
+                android:text="Skills for your future"
+                android:textColor="@color/black"
+                android:textSize="35sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/classica"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/mermaid"
+                android:text="Categories"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoryRecycler"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/mermaid"
+                android:text="Recommended for you"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/courseRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp" />
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
 
 </RelativeLayout>
