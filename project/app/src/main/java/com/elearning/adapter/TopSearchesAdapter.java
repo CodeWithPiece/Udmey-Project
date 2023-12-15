@@ -3,6 +3,7 @@ package com.elearning.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,7 +29,7 @@ public class TopSearchesAdapter extends RecyclerView.Adapter<TopSearchesAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.txtName.setText("digital marketing");
     }
 
     @Override
@@ -38,9 +39,12 @@ public class TopSearchesAdapter extends RecyclerView.Adapter<TopSearchesAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        TextView txtName;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            txtName = itemView.findViewById(R.id.txtName);
 
         }
     }

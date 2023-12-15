@@ -53,6 +53,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/mermaid"
+                android:text="Browse Categories"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoryRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
