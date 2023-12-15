@@ -14,12 +14,14 @@ import com.elearning.model.SubjectModel;
 import com.elearning.views.activity.SubjectActivity;
 import com.google.android.material.checkbox.MaterialCheckBox;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHolder> {
 
     SubjectActivity subjectActivity;
     List<SubjectModel> subjectModelList;
+    List<String> subjectName = new ArrayList<>();
 
     public SubjectAdapter(SubjectActivity subjectActivity, List<SubjectModel> subjectModelList) {
         this.subjectActivity = subjectActivity;
@@ -44,11 +46,9 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHold
                 if (checked[0]) {
                     checked[0] = false;
                     holder.checkBox.setChecked(false);
-                    subjectActivity.subjectName.add(subjectModel.getSubjectName());
                 } else {
                     checked[0] = true;
                     holder.checkBox.setChecked(true);
-                    subjectActivity.subjectName.remove(subjectModel.getSubjectName());
                 }
             }
         });
@@ -74,6 +74,10 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHold
             subjectLayout = itemView.findViewById(R.id.subjectLayout);
 
         }
+    }
+
+    public List<String> getSubjectName() {
+        return subjectName;
     }
 
 }

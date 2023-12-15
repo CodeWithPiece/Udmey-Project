@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.elearning.R;
 import com.elearning.adapter.SubjectAdapter;
@@ -18,7 +19,7 @@ import java.util.List;
 
 public class SubjectActivity extends AppCompatActivity {
 
-    public List<String> subjectName = new ArrayList<>();
+    SubjectAdapter subjectAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class SubjectActivity extends AppCompatActivity {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
 
@@ -43,7 +44,7 @@ public class SubjectActivity extends AppCompatActivity {
         List<SubjectModel> subjectModelList = new ArrayList<>();
         subjectModelList.add(new SubjectModel("Development"));
         subjectModelList.add(new SubjectModel("Business"));
-        subjectModelList.add(new SubjectModel("IT &amp; Software"));
+        subjectModelList.add(new SubjectModel("IT & Software"));
         subjectModelList.add(new SubjectModel("Official Productivity"));
         subjectModelList.add(new SubjectModel("Personal Development"));
         subjectModelList.add(new SubjectModel("Design"));
@@ -51,11 +52,11 @@ public class SubjectActivity extends AppCompatActivity {
         subjectModelList.add(new SubjectModel("Photography"));
         subjectModelList.add(new SubjectModel("Language"));
         subjectModelList.add(new SubjectModel("Music"));
-        subjectModelList.add(new SubjectModel("Health &amp; Fitness"));
+        subjectModelList.add(new SubjectModel("Health & Fitness"));
         subjectModelList.add(new SubjectModel("Life Style"));
-        subjectModelList.add(new SubjectModel("Teaching &amp; Academics"));
+        subjectModelList.add(new SubjectModel("Teaching & Academics"));
         subjectModelList.add(new SubjectModel("Others"));
-        SubjectAdapter subjectAdapter = new SubjectAdapter(SubjectActivity.this, subjectModelList);
+        subjectAdapter = new SubjectAdapter(SubjectActivity.this, subjectModelList);
         recyclerView.setAdapter(subjectAdapter);
     }
 
