@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/star"
+        android:icon="@drawable/star_selector"
+        android:title="Course" />
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/search_selector"
+        android:title="Explore" />
+    <item
+        android:id="@+id/play"
+        android:icon="@drawable/play_selector"
+        android:title="My Course" />
+    <item
+        android:id="@+id/heart"
+        android:icon="@drawable/heart_selector"
+        android:title="Favourite" />
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/profile_selector"
+        android:title="Profile" />
+
+</menu>
