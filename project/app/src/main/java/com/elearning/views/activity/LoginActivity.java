@@ -23,7 +23,8 @@ public class LoginActivity extends AppCompatActivity {
         txtLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(LoginActivity.this, SubjectActivity.class));
+                finishAffinity();
             }
         });
 

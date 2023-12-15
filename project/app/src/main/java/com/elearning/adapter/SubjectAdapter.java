@@ -3,6 +3,8 @@ package com.elearning.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.elearning.R;
 import com.elearning.model.SubjectModel;
 import com.elearning.views.activity.SubjectActivity;
+import com.google.android.material.checkbox.MaterialCheckBox;
 
 import java.util.List;
 
@@ -32,6 +35,23 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        SubjectModel subjectModel = subjectModelList.get(holder.getAdapterPosition());
+        holder.txtSubject.setText(subjectModel.getSubjectName());
+        final boolean[] checked = {false};
+        holder.subjectLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checked[0]) {
+                    checked[0] = false;
+                    holder.checkBox.setChecked(false);
+                    subjectActivity.subjectName.add(subjectModel.getSubjectName());
+                } else {
+                    checked[0] = true;
+                    holder.checkBox.setChecked(true);
+                    subjectActivity.subjectName.remove(subjectModel.getSubjectName());
+                }
+            }
+        });
 
     }
 
@@ -42,8 +62,17 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        TextView txtSubject;
+        MaterialCheckBox checkBox;
+        LinearLayout subjectLayout;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            txtSubject = itemView.findViewById(R.id.txtSubject);
+            checkBox = itemView.findViewById(R.id.checkBox);
+            subjectLayout = itemView.findViewById(R.id.subjectLayout);
+
         }
     }
 

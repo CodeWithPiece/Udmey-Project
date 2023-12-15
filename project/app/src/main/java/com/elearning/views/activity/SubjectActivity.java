@@ -5,15 +5,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 import com.elearning.R;
 import com.elearning.adapter.SubjectAdapter;
 import com.elearning.model.SubjectModel;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SubjectActivity extends AppCompatActivity {
+
+    public List<String> subjectName = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +26,16 @@ public class SubjectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_subject);
 
         RecyclerView subjectRecycler = findViewById(R.id.subjectRecycler);
+        MaterialButton btnContinue = findViewById(R.id.btnContinue);
         subjectRecycler.setLayoutManager(new LinearLayoutManager(SubjectActivity.this, LinearLayoutManager.VERTICAL, false));
         getSubjects(subjectRecycler);
+
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
 
     }
 
