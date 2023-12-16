@@ -1,8 +1,10 @@
 package com.elearning.adapter;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.elearning.R;
 import com.elearning.views.fragment.CourseFragment;
 import com.elearning.views.fragment.ExploreFragment;
+import com.elearning.views.fragment.SubCategoryFragment;
 
 public class BrowseSubCategoryAdapter extends RecyclerView.Adapter<BrowseSubCategoryAdapter.ViewHolder> {
 
@@ -29,7 +32,18 @@ public class BrowseSubCategoryAdapter extends RecyclerView.Adapter<BrowseSubCate
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.txtSubCategoryName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exploreFragment.getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, new SubCategoryFragment())
+                        .commit();
+                Bundle bundle = new Bundle();
+                bundle.putString("data", "Sub-Category");
+                exploreFragment.getParentFragmentManager().setFragmentResult("subCat", bundle);
+            }
+        });
     }
 
     @Override
@@ -39,9 +53,12 @@ public class BrowseSubCategoryAdapter extends RecyclerView.Adapter<BrowseSubCate
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        TextView txtSubCategoryName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            txtSubCategoryName = itemView.findViewById(R.id.txtSubCategoryName);
 
         }
     }
