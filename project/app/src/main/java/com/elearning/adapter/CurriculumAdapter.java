@@ -1,0 +1,67 @@
+package com.elearning.adapter;
+
+import android.graphics.Color;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.elearning.R;
+import com.elearning.views.activity.CourseDetailsActivity;
+import com.elearning.views.fragment.ExploreFragment;
+
+public class CurriculumAdapter extends RecyclerView.Adapter<CurriculumAdapter.ViewHolder> {
+
+    CourseDetailsActivity courseDetailsActivity;
+
+    public CurriculumAdapter(CourseDetailsActivity courseDetailsActivity) {
+        this.courseDetailsActivity = courseDetailsActivity;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_curriculum_item_layout, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        SectionAdapter sectionAdapter = new SectionAdapter(courseDetailsActivity);
+        holder.sectionRecycler.setAdapter(sectionAdapter);
+    }
+
+    @Override
+    public int getItemCount() {
+        return 5;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        RecyclerView sectionRecycler;
+        ImageView imgArrow;
+        TextView txtCategoryName;
+        RelativeLayout categoryLayout;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            categoryLayout = itemView.findViewById(R.id.categoryLayout);
+            imgArrow = itemView.findViewById(R.id.imgArrow);
+            sectionRecycler = itemView.findViewById(R.id.sectionRecycler);
+            txtCategoryName = itemView.findViewById(R.id.txtCategoryName);
+            sectionRecycler.setLayoutManager(new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.VERTICAL, false));
+            sectionRecycler.setVisibility(View.GONE);
+
+        }
+    }
+
+}
