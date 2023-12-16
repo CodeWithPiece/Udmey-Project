@@ -42,21 +42,8 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        RecyclerView sectionRecycler;
-        ImageView imgArrow;
-        TextView txtCategoryName;
-        RelativeLayout categoryLayout;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            categoryLayout = itemView.findViewById(R.id.categoryLayout);
-            imgArrow = itemView.findViewById(R.id.imgArrow);
-            sectionRecycler = itemView.findViewById(R.id.sectionRecycler);
-            txtCategoryName = itemView.findViewById(R.id.txtCategoryName);
-            sectionRecycler.setLayoutManager(new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.VERTICAL, false));
-            sectionRecycler.setVisibility(View.GONE);
-
         }
     }
 

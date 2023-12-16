@@ -21,6 +21,7 @@ import com.elearning.views.fragment.ExploreFragment;
 public class CurriculumAdapter extends RecyclerView.Adapter<CurriculumAdapter.ViewHolder> {
 
     CourseDetailsActivity courseDetailsActivity;
+    int rowIndex = -1;
 
     public CurriculumAdapter(CourseDetailsActivity courseDetailsActivity) {
         this.courseDetailsActivity = courseDetailsActivity;
@@ -37,6 +38,23 @@ public class CurriculumAdapter extends RecyclerView.Adapter<CurriculumAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SectionAdapter sectionAdapter = new SectionAdapter(courseDetailsActivity);
         holder.sectionRecycler.setAdapter(sectionAdapter);
+        holder.categoryLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rowIndex = holder.getAdapterPosition();
+                notifyDataSetChanged();
+            }
+        });
+
+        if (rowIndex == holder.getAdapterPosition()) {
+            Animation animation = AnimationUtils.loadAnimation(courseDetailsActivity, R.anim.move_down);
+            holder.sectionRecycler.setVisibility(View.VISIBLE);
+            holder.imgArrow.setImageResource(R.drawable.down_arrow);
+            holder.sectionRecycler.startAnimation(animation);
+        } else {
+            holder.sectionRecycler.setVisibility(View.GONE);
+            holder.imgArrow.setImageResource(R.drawable.arrow_right);
+        }
     }
 
     @Override
@@ -48,7 +66,6 @@ public class CurriculumAdapter extends RecyclerView.Adapter<CurriculumAdapter.Vi
 
         RecyclerView sectionRecycler;
         ImageView imgArrow;
-        TextView txtCategoryName;
         RelativeLayout categoryLayout;
 
         public ViewHolder(@NonNull View itemView) {
@@ -57,7 +74,6 @@ public class CurriculumAdapter extends RecyclerView.Adapter<CurriculumAdapter.Vi
             categoryLayout = itemView.findViewById(R.id.categoryLayout);
             imgArrow = itemView.findViewById(R.id.imgArrow);
             sectionRecycler = itemView.findViewById(R.id.sectionRecycler);
-            txtCategoryName = itemView.findViewById(R.id.txtCategoryName);
             sectionRecycler.setLayoutManager(new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.VERTICAL, false));
             sectionRecycler.setVisibility(View.GONE);
 

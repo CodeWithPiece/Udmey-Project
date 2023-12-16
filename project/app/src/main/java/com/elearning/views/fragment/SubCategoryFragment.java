@@ -2,6 +2,7 @@ package com.elearning.views.fragment;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
@@ -47,13 +48,18 @@ public class SubCategoryFragment extends Fragment {
         materialToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getParentFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.container, new ExploreFragment())
-                        .commit();
+                loadFragment(new ExploreFragment());
             }
         });
 
         return view;
     }
+
+    public void loadFragment(Fragment fragment) {
+        getParentFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
+    }
+
 }
