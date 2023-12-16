@@ -21,7 +21,7 @@ import com.elearning.views.fragment.ExploreFragment;
 public class BrowseCategoryAdapter extends RecyclerView.Adapter<BrowseCategoryAdapter.ViewHolder> {
 
     ExploreFragment exploreFragment;
-    int rowIndex = -1;
+    int rowIndex = 0;
 
     public BrowseCategoryAdapter(ExploreFragment exploreFragment) {
         this.exploreFragment = exploreFragment;

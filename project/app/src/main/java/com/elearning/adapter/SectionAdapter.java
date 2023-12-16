@@ -31,8 +31,7 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
-
+        holder.txtSectionCount.setText(String.valueOf(position + 1));
     }
 
     @Override
@@ -42,8 +41,13 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        TextView txtSectionCount;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            txtSectionCount = itemView.findViewById(R.id.txtSectionCount);
+
         }
     }
 

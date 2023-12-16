@@ -21,7 +21,7 @@ import com.elearning.views.fragment.ExploreFragment;
 public class CurriculumAdapter extends RecyclerView.Adapter<CurriculumAdapter.ViewHolder> {
 
     CourseDetailsActivity courseDetailsActivity;
-    int rowIndex = -1;
+    int rowIndex = 0;
 
     public CurriculumAdapter(CourseDetailsActivity courseDetailsActivity) {
         this.courseDetailsActivity = courseDetailsActivity;
@@ -38,6 +38,7 @@ public class CurriculumAdapter extends RecyclerView.Adapter<CurriculumAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SectionAdapter sectionAdapter = new SectionAdapter(courseDetailsActivity);
         holder.sectionRecycler.setAdapter(sectionAdapter);
+        holder.txtCurriculumName.setText("Section " + (position + 1) + " - Introduction");
         holder.categoryLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +66,7 @@ public class CurriculumAdapter extends RecyclerView.Adapter<CurriculumAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         RecyclerView sectionRecycler;
+        TextView txtCurriculumName;
         ImageView imgArrow;
         RelativeLayout categoryLayout;
 
@@ -73,6 +75,7 @@ public class CurriculumAdapter extends RecyclerView.Adapter<CurriculumAdapter.Vi
 
             categoryLayout = itemView.findViewById(R.id.categoryLayout);
             imgArrow = itemView.findViewById(R.id.imgArrow);
+            txtCurriculumName = itemView.findViewById(R.id.txtCurriculumName);
             sectionRecycler = itemView.findViewById(R.id.sectionRecycler);
             sectionRecycler.setLayoutManager(new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.VERTICAL, false));
             sectionRecycler.setVisibility(View.GONE);
