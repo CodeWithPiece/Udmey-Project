@@ -45,14 +45,16 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/classica"
             android:text="4.5"
-            android:textSize="12sp" />
+            android:textColor="#FF9800"
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
         <RatingBar
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:progressTint="#FFC107"
+            android:progressTint="#FF9800"
             android:rating="4.5" />
 
         <TextView

@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.elearning.R;
 import com.elearning.adapter.TopicAdapter;
+import com.elearning.adapter.VerticalCourseAdapter;
 import com.google.android.material.appbar.MaterialToolbar;
 
 public class SubCategoryFragment extends Fragment {
@@ -29,8 +30,12 @@ public class SubCategoryFragment extends Fragment {
         MaterialToolbar materialToolbar = view.findViewById(R.id.toolBar);
         TextView txtSubCategoryName = view.findViewById(R.id.txtSubCategoryName);
         RecyclerView topicRecycler = view.findViewById(R.id.topicRecycler);
+        RecyclerView courseRecycler = view.findViewById(R.id.courseRecycler);
         TopicAdapter topicAdapter = new TopicAdapter(SubCategoryFragment.this);
+        VerticalCourseAdapter verticalCourseAdapter = new VerticalCourseAdapter(SubCategoryFragment.this);
         topicRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        courseRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        courseRecycler.setAdapter(verticalCourseAdapter);
         topicRecycler.setAdapter(topicAdapter);
         getParentFragmentManager().setFragmentResultListener("subCat", this, new FragmentResultListener() {
             @Override
