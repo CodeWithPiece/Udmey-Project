@@ -21,7 +21,6 @@
             android:fontFamily="@font/classica"
             android:text="Category Name"
             android:textColor="@color/black"
-            android:textSize="16sp"
             android:textStyle="bold" />
 
         <ImageView

@@ -10,4 +10,5 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:text="Sub-Category Name (1200)"
-    android:textColor="@color/black" />
+    android:textColor="@color/black"
+    android:textSize="12sp" />
