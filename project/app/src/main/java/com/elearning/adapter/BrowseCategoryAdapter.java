@@ -1,5 +1,6 @@
 package com.elearning.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -49,9 +51,11 @@ public class BrowseCategoryAdapter extends RecyclerView.Adapter<BrowseCategoryAd
             holder.subCategoryRecycler.setVisibility(View.VISIBLE);
             holder.imgArrow.setImageResource(R.drawable.down_arrow);
             holder.subCategoryRecycler.startAnimation(animation);
+            holder.txtCategoryName.setTextColor(exploreFragment.getContext().getColor(R.color.md_theme_light_primary));
         } else {
             holder.subCategoryRecycler.setVisibility(View.GONE);
             holder.imgArrow.setImageResource(R.drawable.arrow_right);
+            holder.txtCategoryName.setTextColor(Color.BLACK);
         }
 
     }
@@ -65,6 +69,7 @@ public class BrowseCategoryAdapter extends RecyclerView.Adapter<BrowseCategoryAd
 
         RecyclerView subCategoryRecycler;
         ImageView imgArrow;
+        TextView txtCategoryName;
         RelativeLayout categoryLayout;
 
         public ViewHolder(@NonNull View itemView) {
@@ -73,6 +78,7 @@ public class BrowseCategoryAdapter extends RecyclerView.Adapter<BrowseCategoryAd
             categoryLayout = itemView.findViewById(R.id.categoryLayout);
             imgArrow = itemView.findViewById(R.id.imgArrow);
             subCategoryRecycler = itemView.findViewById(R.id.subCategoryRecycler);
+            txtCategoryName = itemView.findViewById(R.id.txtCategoryName);
             subCategoryRecycler.setLayoutManager(new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.VERTICAL, false));
             subCategoryRecycler.setVisibility(View.GONE);
 
