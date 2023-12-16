@@ -8,8 +8,10 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/categoryLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="5dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -22,6 +24,7 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/imgArrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -31,6 +34,7 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/subCategoryRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/custom_browse_sub_category_item_layout" />

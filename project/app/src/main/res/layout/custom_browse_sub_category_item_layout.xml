@@ -6,5 +6,5 @@
     android:layout_margin="10dp"
     android:fontFamily="@font/classica"
     android:orientation="vertical"
-    android:text="Sub-Category Name"
+    android:text="Sub-Category Name (1200)"
     android:textColor="@color/black" />

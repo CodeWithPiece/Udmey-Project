@@ -5,23 +5,25 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.elearning.R;
 import com.elearning.views.fragment.CourseFragment;
+import com.elearning.views.fragment.ExploreFragment;
 
 public class BrowseSubCategoryAdapter extends RecyclerView.Adapter<BrowseSubCategoryAdapter.ViewHolder> {
 
-    CourseFragment courseFragment;
+    ExploreFragment exploreFragment;
 
-    public BrowseSubCategoryAdapter(CourseFragment courseFragment) {
-        this.courseFragment = courseFragment;
+    public BrowseSubCategoryAdapter(ExploreFragment exploreFragment) {
+        this.exploreFragment = exploreFragment;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_category_item_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_browse_sub_category_item_layout, parent, false);
         return new ViewHolder(view);
     }
 
@@ -32,14 +34,14 @@ public class BrowseSubCategoryAdapter extends RecyclerView.Adapter<BrowseSubCate
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 5;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
 
         }
     }

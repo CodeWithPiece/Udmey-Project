@@ -14,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 
 import com.elearning.R;
+import com.elearning.adapter.BrowseCategoryAdapter;
 import com.elearning.adapter.TopSearchesAdapter;
 
 public class ExploreFragment extends Fragment {
@@ -28,9 +29,13 @@ public class ExploreFragment extends Fragment {
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.move);
         edtSearch.startAnimation(animation);
         RecyclerView topSearchesRecycler = view.findViewById(R.id.topSearchesRecycler);
+        RecyclerView categoryRecycler = view.findViewById(R.id.categoryRecycler);
         TopSearchesAdapter topSearchesAdapter = new TopSearchesAdapter(ExploreFragment.this);
+        BrowseCategoryAdapter browseCategoryAdapter = new BrowseCategoryAdapter(ExploreFragment.this);
         topSearchesRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        categoryRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         topSearchesRecycler.setAdapter(topSearchesAdapter);
+        categoryRecycler.setAdapter(browseCategoryAdapter);
         return view;
     }
 }
