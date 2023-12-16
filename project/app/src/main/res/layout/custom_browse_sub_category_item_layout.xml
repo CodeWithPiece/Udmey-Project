@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/txtName"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:clickable="true"
+    android:focusable="true"
     android:fontFamily="@font/classica"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
     android:orientation="vertical"
+    android:padding="10dp"
     android:text="Sub-Category Name (1200)"
     android:textColor="@color/black" />

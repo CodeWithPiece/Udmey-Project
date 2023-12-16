@@ -3,6 +3,8 @@ package com.elearning.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -43,8 +45,10 @@ public class BrowseCategoryAdapter extends RecyclerView.Adapter<BrowseCategoryAd
         });
 
         if (rowIndex == holder.getAdapterPosition()) {
+            Animation animation = AnimationUtils.loadAnimation(exploreFragment.getContext(), R.anim.move_down);
             holder.subCategoryRecycler.setVisibility(View.VISIBLE);
             holder.imgArrow.setImageResource(R.drawable.down_arrow);
+            holder.subCategoryRecycler.startAnimation(animation);
         } else {
             holder.subCategoryRecycler.setVisibility(View.GONE);
             holder.imgArrow.setImageResource(R.drawable.arrow_right);
@@ -70,7 +74,6 @@ public class BrowseCategoryAdapter extends RecyclerView.Adapter<BrowseCategoryAd
             imgArrow = itemView.findViewById(R.id.imgArrow);
             subCategoryRecycler = itemView.findViewById(R.id.subCategoryRecycler);
             subCategoryRecycler.setLayoutManager(new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.VERTICAL, false));
-
             subCategoryRecycler.setVisibility(View.GONE);
 
         }
