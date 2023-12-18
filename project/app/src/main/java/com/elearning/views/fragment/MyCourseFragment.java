@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.elearning.R;
+import com.elearning.adapter.MyCourseAdapter;
 
 public class MyCourseFragment extends Fragment {
     @Override
@@ -20,7 +21,9 @@ public class MyCourseFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_my_course, container, false);
 
         RecyclerView myCourseRecycler = view.findViewById(R.id.myCourseRecycler);
+        MyCourseAdapter myCourseAdapter = new MyCourseAdapter(MyCourseFragment.this);
         myCourseRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        myCourseRecycler.setAdapter(myCourseAdapter);
 
         return view;
     }
