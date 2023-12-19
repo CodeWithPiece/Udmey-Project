@@ -39,4 +39,8 @@
         <item name="android:textSize">10sp</item>
     </style>
 
+    <style name="ToolBarTheme">
+        <item name="android:fontFamily">@font/classica</item>
+    </style>
+
 </resources>
