@@ -40,7 +40,7 @@
     </style>
 
     <style name="ToolBarTheme">
-        <item name="android:fontFamily">@font/classica</item>
+        <item name="android:fontFamily">@font/mermaid</item>
     </style>
 
 </resources>
