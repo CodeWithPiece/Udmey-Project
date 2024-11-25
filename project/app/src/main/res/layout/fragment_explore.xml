@@ -54,7 +54,10 @@
                 android:id="@+id/topSearchesRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/custom_category_item_layout" />
 
             <TextView
                 android:layout_width="wrap_content"
